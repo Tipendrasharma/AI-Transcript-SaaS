@@ -1,7 +1,5 @@
-
-
-import * as localWhisperProvider from "./local-whisper.provider.js";
-import * as groqProvider from "./groq.provider.js";
+import localWhisperProvider from "./local-whisper.provider.js";
+import groqProvider from "./groq.provider.js";
 
 const providers = {
     local: localWhisperProvider,
