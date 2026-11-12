@@ -1,7 +1,7 @@
 import { spawn } from "node:child_process";
 import path from "node:path";
 
-export async function transcribe(audioPath) {
+async function transcribe(audioPath) {
   return new Promise((resolve, reject) => {
 
     const pythonProcess = spawn(
@@ -49,3 +49,6 @@ export async function transcribe(audioPath) {
 
   });
 }
+export default {
+  transcribe
+};

@@ -6,12 +6,7 @@ import { authenticate } from "../middleware/auth.middleware.js";
 
 const router = express.Router();
 
-router.post(
-  "/",
-  authenticate,
-  upload.single("media"),
-  transcriptController.generateTranscript,
-);
+router.post("/",authenticate,upload.single("media"),transcriptController.generateTranscript,);
 
 router.get("/", authenticate, transcriptController.getTranscriptHistory);
 router.get("/search", authenticate, transcriptController.searchTranscript);

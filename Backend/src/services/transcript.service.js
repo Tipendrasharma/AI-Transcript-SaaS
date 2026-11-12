@@ -10,10 +10,12 @@ async function generateTranscriptService({ file, body, user }) {
       throw new Error("Please upload a file or provide a video URL.");
     }
     if (file) {
-      const transcriptData = await generateTranscript({
-        file,
-        videoUrl: null,
-      });
+   const transcriptData = await generateTranscript({
+    file,
+    videoUrl: null,
+    language: body.language,
+    prompt: body.prompt,
+});
 
       const transcript = await Transcript.create({
         user: user.id,
@@ -35,10 +37,12 @@ async function generateTranscriptService({ file, body, user }) {
     }
 
     if (body.videoUrl) {
-      const transcriptData = await generateTranscript({
-        file: null,
-        videoUrl: body.videoUrl,
-      });
+    const transcriptData = await generateTranscript({
+    file: null,
+    videoUrl: body.videoUrl,
+    language: body.language,
+    prompt: body.prompt,
+});
 
       const transcript = await Transcript.create({
         user: user.id,

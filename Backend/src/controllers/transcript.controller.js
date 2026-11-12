@@ -8,7 +8,8 @@ import {
 } from "../services/transcript.service.js";
 
 async function generateTranscript(req, res, next) {
-  console.log("req.user =>", req.user);
+  console.log("✅ Controller Hit");
+  
 
   try {
     const result = await generateTranscriptService({
